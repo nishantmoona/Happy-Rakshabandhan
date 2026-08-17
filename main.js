@@ -101,7 +101,163 @@
   const LETTER_TITLE = "For You";
   const LETTER_BODY =
     "Happy Raksha Bandhan! Some bonds are not tied by blood, but by moments, care, and quiet understanding. You've always been a calm presence — someone who never needed to speak much, yet made things feel better just by being there. On this special day, I just want to thank you for being part of this journey. May your life always be filled with peace, love, and silent strength. No matter where life takes us, this thread of connection will always stay.";
+const MEMORY_PHOTOS = [
+  {
+    src: "img/childhood/childhood1.jpg",
+    category: "childhood",
+    caption: "Childhood Partners"
+  },
+  {
+    src: "img/childhood/childhood2.jpg",
+    category: "childhood",
+    caption: "Little Fights"
+  },
+  {
+    src: "img/childhood/childhood3.jpg",
+    category: "childhood",
+    caption: "Pure Childhood"
+  },
+  {
+    src: "img/old/old1.jpg",
+    category: "old",
+    caption: "Growing Together"
+  },
+  {
+    src: "img/old/old2.jpg",
+    category: "old",
+    caption: "Old Smiles"
+  },
+  {
+    src: "img/old/old3.jpg",
+    category: "old",
+    caption: "Same Bond"
+  },
+  {
+    src: "img/recent/recent1.jpg",
+    category: "recent",
+    caption: "Still Together"
+  },
+  {
+    src: "img/recent/recent2.jpg",
+    category: "recent",
+    caption: "Forever Connected"
+  },
+  {
+    src: "img/recent/recent3.jpg",
+    category: "recent",
+    caption: "Rakhi Memories"
+  }
+];
 
+function ensureMemoryLightbox() {
+  let lightbox = $("#memoryLightbox");
+
+  if (lightbox) return lightbox;
+
+  lightbox = document.createElement("div");
+  lightbox.className = "memory-lightbox";
+  lightbox.id = "memoryLightbox";
+
+  lightbox.innerHTML = `
+    <div class="memory-lightbox-card">
+      <button class="memory-lightbox-close" type="button" aria-label="Close memory">&times;</button>
+      <img id="memoryLightboxImg" src="" alt="Selected memory">
+      <p class="memory-lightbox-caption" id="memoryLightboxCaption"></p>
+    </div>
+  `;
+
+  document.body.appendChild(lightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (
+      event.target === lightbox ||
+      event.target.classList.contains("memory-lightbox-close")
+    ) {
+      closeMemoryLightbox();
+    }
+  });
+
+  return lightbox;
+}
+
+function openMemoryLightbox(src, caption) {
+  const lightbox = ensureMemoryLightbox();
+  const img = $("#memoryLightboxImg");
+  const text = $("#memoryLightboxCaption");
+
+  img.src = src;
+  img.alt = caption || "Sibling memory";
+  text.textContent = caption || "Sibling memory";
+
+  lightbox.classList.add("open");
+}
+
+function closeMemoryLightbox() {
+  const lightbox = $("#memoryLightbox");
+  const img = $("#memoryLightboxImg");
+
+  if (!lightbox) return;
+
+  lightbox.classList.remove("open");
+
+  if (img) {
+    img.src = "";
+  }
+}
+
+function renderMemoryWall(category = "all") {
+  const grid = $("#rakhiGallery");
+  if (!grid) return;
+
+  const photos =
+    category === "all"
+      ? MEMORY_PHOTOS
+      : MEMORY_PHOTOS.filter((photo) => photo.category === category);
+
+  grid.innerHTML = "";
+
+  photos.forEach((photo) => {
+    const card = document.createElement("figure");
+    card.className = "gallery-card glass";
+
+    const img = document.createElement("img");
+    img.src = photo.src;
+    img.alt = photo.caption;
+    img.loading = "lazy";
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = photo.caption;
+
+    img.addEventListener("click", () => {
+      openMemoryLightbox(photo.src, photo.caption);
+    });
+
+    img.addEventListener("error", () => {
+      card.remove();
+    });
+
+    card.appendChild(img);
+    card.appendChild(caption);
+    grid.appendChild(card);
+  });
+}
+
+function initMemoryGallery() {
+  const tabs = document.querySelectorAll(".memory-filter");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((item) => item.classList.remove("active"));
+      tab.classList.add("active");
+
+      const category = tab.getAttribute("data-filter");
+      renderMemoryWall(category);
+    });
+  });
+
+  renderMemoryWall("all");
+}
+  
   let timers = [];
   function clearTimers() {
     timers.forEach((t) => clearInterval(t));
