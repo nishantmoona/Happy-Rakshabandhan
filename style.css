@@ -715,3 +715,9 @@ main {
     right: 8px;
   }
 }
+
+.gallery-card img.image-contain {
+  object-fit: contain;
+  background: rgba(255, 248, 236, 0.12);
+  padding: 8px;
+}
