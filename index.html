@@ -58,10 +58,15 @@
         </div>
 
         <div class="hero-actions">
+          <a class="btn-ghost" href="#memory-wall">
+            <i data-lucide="images"></i>
+            <span>Memories</span>
+          </a>
           <button class="btn-primary" id="btn">
             <i data-lucide="gift"></i>
             <span>Open Your Letter</span>
           </button>
+          
           <a class="btn-ghost" href="#about">
             <i data-lucide="arrow-down"></i>
             <span>Explore</span>
@@ -129,6 +134,22 @@
       </section>
 
       <div class="box__letter">
+        <section class="memory-wall reveal" id="memory-wall">
+  <div class="section-head">
+    <span class="kicker">Memory Wall</span>
+    <h2>Moments We Will Always Keep</h2>
+    <div class="divider"><span></span><i data-lucide="flower-2"></i><span></span></div>
+  </div>
+
+  <div class="memory-filters">
+    <button class="memory-filter active" data-filter="all">All Memories</button>
+    <button class="memory-filter" data-filter="childhood">Childhood</button>
+    <button class="memory-filter" data-filter="old">Old Photos</button>
+    <button class="memory-filter" data-filter="recent">Recent</button>
+  </div>
+
+  <div class="gallery-grid" id="rakhiGallery"></div>
+</section>
         <div class="letter__border">
           <div class="letter">
             <div class="title__letter"></div>
