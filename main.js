@@ -145,13 +145,13 @@ const MEMORY_PHOTOS = [
   {
     src: "img/old/old3.jpg",
     category: "old",
-    caption: "Always Protected"
+    caption: "Always Protected",
     fit: "contain"
   },
     {
     src: "img/old/old4.jpg",
     category: "old",
-    caption: "Foreover My People"
+    caption: "Forever My People"
   },
     {
     src: "img/old/old5.jpg",
@@ -191,13 +191,13 @@ const MEMORY_PHOTOS = [
     {
     src: "img/recent/recent5.jpg",
     category: "recent",
-    caption: "Growing Together"
+    caption: "Growing Together",
     fit: "contain"
   },
   {
     src: "img/recent/recent6.jpg",
     category: "recent",
-    caption: "Time Changed, Love Stayed"
+    caption: "Time Changed, Love Stayed",
     fit: "contain"
   }
 ];
