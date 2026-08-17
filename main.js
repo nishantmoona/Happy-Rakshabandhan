@@ -314,6 +314,7 @@ function initMemoryGallery() {
     renderIcons();
     setYear();
     runIntro();
+    initMemoryGallery();
 
     const btn = $("#btn");
     const close = $(".close");
@@ -321,6 +322,11 @@ function initMemoryGallery() {
     if (btn) btn.addEventListener("click", openLetter);
     if (close) close.addEventListener("click", closeLetter);
     if (box) box.addEventListener("click", (e) => { if (e.target === box) closeLetter(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLetter(); });
+    document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+    closeLetter();
+    closeMemoryLightbox();
+  }
+});
   });
 })();
