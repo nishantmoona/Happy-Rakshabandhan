@@ -346,16 +346,12 @@ function initMemoryGallery() {
     box.classList.add("open");
     burst({ particleCount: 90, spread: 80, origin: { y: 0.4 }, scalar: 0.9 });
 
-    setTimeout(() => {
-    border.style.display = "block";
-
-    const letter = $(".letter");
-    if (letter) letter.scrollTop = 0;
-
-    timers.push(setTimeout(() => typeInto(title, LETTER_TITLE, 70), 180));
-    timers.push(setTimeout(() => media.forEach((m) => m && m.classList.add("animationOp")), 350));
-    timers.push(setTimeout(() => hearts.forEach((h) => h.classList.add("animation")), 550));
-    timers.push(setTimeout(() => typeInto(body, LETTER_BODY, 18), 700));
+setTimeout(() => {
+  border.style.display = "block";
+  timers.push(setTimeout(() => typeInto(title, LETTER_TITLE, 90), 300));
+  timers.push(setTimeout(() => media.forEach((m) => m && m.classList.add("animationOp")), 700));
+  timers.push(setTimeout(() => hearts.forEach((h) => h.classList.add("animation")), 1300));
+  timers.push(setTimeout(() => typeInto(body, LETTER_BODY, 26), 1800));
 }, 60);
   }
 
