@@ -313,6 +313,11 @@ function initMemoryGallery() {
   });
 
   renderMemoryWall("all");
+
+  const memoryWall = $("#memory-wall");
+  if (memoryWall) {
+    memoryWall.classList.add("in");
+  }
 }
   
   let timers = [];
