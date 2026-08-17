@@ -721,3 +721,54 @@ main {
   background: rgba(255, 248, 236, 0.12);
   padding: 8px;
 }
+
+/* ================================
+   Mobile Memory Wall Visibility Fix
+================================ */
+
+@media (max-width: 768px) {
+  .memory-wall {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-top: 60px;
+  }
+
+  .memory-wall.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+
+  .gallery-card {
+    display: block !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .gallery-card img {
+    display: block !important;
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .gallery-card img.image-contain {
+    object-fit: contain !important;
+    background: rgba(255, 248, 236, 0.12);
+    padding: 8px;
+  }
+
+  .gallery-card figcaption {
+    display: block !important;
+  }
+}
