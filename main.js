@@ -110,72 +110,77 @@ const MEMORY_PHOTOS = [
   {
     src: "img/childhood/childhood2.jpg",
     category: "childhood",
-    caption: "Little Fights"
+    caption: "Childhood Chaos"
   },
   {
     src: "img/childhood/childhood3.jpg",
     category: "childhood",
-    caption: "Pure Childhood"
+    caption: "Tiny Hands, Big Bond"
   },
     {
     src: "img/childhood/childhood4.jpg",
     category: "childhood",
-    caption: "Pure Childhood"
+    caption: "Little Fights, Big Love"
   },
     {
     src: "img/childhood/childhood5.jpg",
     category: "childhood",
-    caption: "Pure Childhood"
+    caption: "Growing Up Together"
   },
     {
     src: "img/childhood/childhood6.jpg",
     category: "childhood",
-    caption: "Pure Childhood"
+    caption: "Same Souls"
   },
   {
     src: "img/old/old1.jpg",
     category: "old",
-    caption: "Growing Together"
+    caption: "Old Souls, Warm Hearts"
   },
   {
     src: "img/old/old2.jpg",
     category: "old",
-    caption: "Old Smiles"
+    caption: "The Rakhi Bond"
   },
   {
     src: "img/old/old3.jpg",
     category: "old",
-    caption: "Same Bond"
+    caption: "Always Protected"
   },
     {
     src: "img/old/old4.jpg",
     category: "old",
-    caption: "Same Bond"
+    caption: "Foreover My People"
   },
     {
     src: "img/old/old5.jpg",
     category: "old",
-    caption: "Same Bond"
+    caption: "Moments That Matter"
   },
     {
     src: "img/old/old6.jpg",
     category: "old",
-    caption: "Same Bond"
+    caption: "Years Passed, Bond Stayed"
+  },
+      {
+    src: "img/old/old7.jpg",
+    category: "old",
+    caption: "Little Fights"
   },
   {
     src: "img/recent/recent1.jpg",
     category: "recent",
-    caption: "Still Together"
+    caption: "Home in One Frame"
   },
   {
     src: "img/recent/recent2.jpg",
     category: "recent",
-    caption: "Forever Connected"
+    caption: "Love Beyond Time"
   },
     {
     src: "img/recent/recent3.jpg",
     category: "recent",
-    caption: "Forever Connected"
+    caption: "Siblings for Life"
   },
     {
     src: "img/recent/recent4.jpg",
@@ -185,12 +190,12 @@ const MEMORY_PHOTOS = [
     {
     src: "img/recent/recent5.jpg",
     category: "recent",
-    caption: "Forever Connected"
+    caption: "Growing Together"
   },
   {
     src: "img/recent/recent6.jpg",
     category: "recent",
-    caption: "Rakhi Memories"
+    caption: "Time Changed, Love Stayed"
   }
 ];
 
