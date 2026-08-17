@@ -130,7 +130,7 @@ const MEMORY_PHOTOS = [
     {
     src: "img/childhood/childhood6.jpg",
     category: "childhood",
-    caption: "Same Souls"
+    caption: "Same Souls, Old Smiles"
   },
   {
     src: "img/old/old1.jpg",
