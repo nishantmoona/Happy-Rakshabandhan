@@ -396,3 +396,322 @@ main {
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .2s !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ================================
+   Sibling Memory Sections
+================================ */
+
+.hero-mini-memories {
+  position: absolute;
+  left: -22px;
+  bottom: 18px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 22px;
+  background: rgba(255, 248, 236, 0.13);
+  border: 1px solid rgba(255, 220, 160, 0.34);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 42px -18px rgba(0, 0, 0, 0.65);
+}
+
+.hero-mini-memories img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 216, 142, 0.65);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.memories,
+.then-now,
+.memory-wall {
+  position: relative;
+}
+
+.memory-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.memory-story-card {
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.memory-story-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--marigold);
+  box-shadow: 0 24px 50px -16px rgba(255, 150, 40, 0.4);
+}
+
+.memory-story-card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+
+.memory-story-card div {
+  padding: 24px;
+}
+
+.memory-story-card span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--marigold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.memory-story-card h3 {
+  font-family: var(--font-serif);
+  color: var(--gold-soft);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.memory-story-card p {
+  color: #ffe9cf;
+  font-size: 0.96rem;
+}
+
+/* Then and Now */
+.then-now-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 24px;
+}
+
+.then-now-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.then-now-photo img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.then-now-photo:hover img {
+  transform: scale(1.06);
+}
+
+.then-now-photo span {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 8px 14px;
+  border-radius: 99px;
+  color: var(--maroon-900);
+  background: linear-gradient(135deg, var(--marigold), var(--gold-soft));
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.then-now-center {
+  text-align: center;
+  color: var(--gold-soft);
+  max-width: 170px;
+}
+
+.then-now-center svg {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  color: var(--marigold);
+}
+
+.then-now-center p {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+/* Memory Wall */
+.memory-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: -12px 0 34px;
+}
+
+.memory-filter {
+  padding: 11px 18px;
+  border-radius: 99px;
+  border: 1px solid var(--glass-brd);
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.memory-filter:hover,
+.memory-filter.active {
+  transform: translateY(-2px);
+  color: var(--maroon-900);
+  background: linear-gradient(135deg, var(--marigold), var(--gold-soft));
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  border-color: var(--marigold);
+  box-shadow: 0 26px 55px -18px rgba(255, 150, 40, 0.45);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.gallery-card figcaption {
+  width: fit-content;
+  margin: 12px auto 6px;
+  padding: 7px 14px;
+  border-radius: 99px;
+  color: var(--maroon-900);
+  background: linear-gradient(135deg, rgba(255, 176, 46, 0.95), rgba(243, 217, 138, 0.95));
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* Memory Lightbox */
+.memory-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  display: none;
+  place-items: center;
+  padding: 22px;
+  background: rgba(20, 4, 8, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.memory-lightbox.open {
+  display: grid;
+}
+
+.memory-lightbox-card {
+  width: min(920px, 96vw);
+  position: relative;
+  padding: 12px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--gold), var(--marigold), var(--crimson));
+  box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.8);
+}
+
+.memory-lightbox-card img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 20px;
+  background: #1b0508;
+}
+
+.memory-lightbox-caption {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--cream);
+  font-weight: 700;
+}
+
+.memory-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--crimson), var(--maroon-800));
+  font-size: 24px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.footer-credit {
+  margin-top: 12px;
+  color: #ffe9cf;
+  opacity: 0.82;
+  font-size: 0.95rem;
+}
+
+/* Responsive memory sections */
+@media (max-width: 900px) {
+  .memory-story-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .then-now-card {
+    grid-template-columns: 1fr;
+  }
+
+  .then-now-center {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-mini-memories {
+    position: static;
+    margin-top: 16px;
+    justify-content: center;
+  }
+
+  .hero-mini-memories img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .memory-story-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-story-card img,
+  .gallery-card img {
+    height: 250px;
+  }
+
+  .then-now-photo img {
+    height: 290px;
+  }
+
+  .memory-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
