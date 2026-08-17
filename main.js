@@ -310,6 +310,35 @@ function initMemoryGallery() {
     border.style.display = "none";
   }
 
+  let isMusicPlaying = false;
+
+function toggleMusic() {
+  const music = $("#bgMusic");
+  const musicBtn = $("#musicBtn");
+
+  if (!music || !musicBtn) return;
+
+  music.volume = 0.45;
+
+  if (isMusicPlaying) {
+    music.pause();
+    isMusicPlaying = false;
+    musicBtn.innerHTML = `<i data-lucide="music"></i><span>Play Music</span>`;
+    renderIcons();
+    return;
+  }
+
+  music.play()
+    .then(() => {
+      isMusicPlaying = true;
+      musicBtn.innerHTML = `<i data-lucide="pause"></i><span>Pause Music</span>`;
+      renderIcons();
+    })
+    .catch(() => {
+      console.log("Music can play only after user interaction.");
+    });
+}
+  
   document.addEventListener("DOMContentLoaded", () => {
     renderIcons();
     setYear();
@@ -319,7 +348,9 @@ function initMemoryGallery() {
     const btn = $("#btn");
     const close = $(".close");
     const box = $(".box__letter");
+    const musicBtn = $("#musicBtn");
     if (btn) btn.addEventListener("click", openLetter);
+    if (musicBtn) musicBtn.addEventListener("click", toggleMusic);
     if (close) close.addEventListener("click", closeLetter);
     if (box) box.addEventListener("click", (e) => { if (e.target === box) closeLetter(); });
     document.addEventListener("keydown", (e) => {
