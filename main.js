@@ -273,10 +273,14 @@ function renderMemoryWall(category = "all") {
     const card = document.createElement("figure");
     card.className = "gallery-card glass";
 
-    const img = document.createElement("img");
-    img.src = photo.src;
-    img.alt = photo.caption;
-    img.loading = "lazy";
+  const img = document.createElement("img");
+  img.src = photo.src;
+  img.alt = photo.caption;
+  img.loading = "lazy";
+
+if (photo.fit === "contain") {
+  img.classList.add("image-contain");
+}
 
     const caption = document.createElement("figcaption");
     caption.textContent = photo.caption;
