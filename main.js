@@ -117,6 +117,21 @@ const MEMORY_PHOTOS = [
     category: "childhood",
     caption: "Pure Childhood"
   },
+    {
+    src: "img/childhood/childhood4.jpg",
+    category: "childhood",
+    caption: "Pure Childhood"
+  },
+    {
+    src: "img/childhood/childhood5.jpg",
+    category: "childhood",
+    caption: "Pure Childhood"
+  },
+    {
+    src: "img/childhood/childhood6.jpg",
+    category: "childhood",
+    caption: "Pure Childhood"
+  },
   {
     src: "img/old/old1.jpg",
     category: "old",
@@ -132,6 +147,21 @@ const MEMORY_PHOTOS = [
     category: "old",
     caption: "Same Bond"
   },
+    {
+    src: "img/old/old4.jpg",
+    category: "old",
+    caption: "Same Bond"
+  },
+    {
+    src: "img/old/old5.jpg",
+    category: "old",
+    caption: "Same Bond"
+  },
+    {
+    src: "img/old/old6.jpg",
+    category: "old",
+    caption: "Same Bond"
+  },
   {
     src: "img/recent/recent1.jpg",
     category: "recent",
@@ -142,8 +172,23 @@ const MEMORY_PHOTOS = [
     category: "recent",
     caption: "Forever Connected"
   },
-  {
+    {
     src: "img/recent/recent3.jpg",
+    category: "recent",
+    caption: "Forever Connected"
+  },
+    {
+    src: "img/recent/recent4.jpg",
+    category: "recent",
+    caption: "Forever Connected"
+  },
+    {
+    src: "img/recent/recent5.jpg",
+    category: "recent",
+    caption: "Forever Connected"
+  },
+  {
+    src: "img/recent/recent6.jpg",
     category: "recent",
     caption: "Rakhi Memories"
   }
