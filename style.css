@@ -721,3 +721,71 @@ main {
   background: rgba(255, 248, 236, 0.12);
   padding: 8px;
 }
+
+/* ================================
+   Fixed Letter Popup Layout
+================================ */
+
+.letter__border {
+  width: min(760px, calc(100vw - 28px));
+}
+
+.letter {
+  max-height: 86vh;
+  padding: 34px 34px 28px;
+  overflow-y: auto;
+}
+
+.content__letter {
+  display: block;
+}
+
+.content__letter .left,
+.love__img,
+#mewmew {
+  display: none !important;
+}
+
+.right {
+  display: block;
+}
+
+.title__letter {
+  margin-bottom: 18px;
+  padding: 0;
+  text-align: center;
+}
+
+.text__letter {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.text__letter p {
+  margin: 0;
+  text-align: left;
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+/* Mobile letter fix */
+@media (max-width: 560px) {
+  .letter__border {
+    width: calc(100vw - 22px);
+  }
+
+  .letter {
+    max-height: 84vh;
+    padding: 28px 20px 24px;
+  }
+
+  .title__letter {
+    font-size: 1.7rem;
+    margin-bottom: 14px;
+  }
+
+  .text__letter p {
+    font-size: 0.96rem;
+    line-height: 1.68;
+  }
+}
