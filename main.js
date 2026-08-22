@@ -133,6 +133,11 @@ const MEMORY_PHOTOS = [
     caption: "Same Souls, Old Smiles"
   },
   {
+    src: "img/childhood/childhood7.jpg",
+    category: "childhood",
+    caption: "Little feets, Small Cries"
+  },
+  {
     src: "img/old/old1.jpg",
     category: "old",
     caption: "Old Souls, Warm Hearts"
